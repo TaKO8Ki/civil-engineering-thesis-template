@@ -10,3 +10,5 @@ $ docker run -v /path/to/dir/:/workdir paperist/alpine-texlive-ja platex thesis.
 $ docker run -v /path/to/dir/:/workdir paperist/alpine-texlive-ja platex thesis.tex
 $ docker run -v /path/to/dir/:/workdir paperist/alpine-texlive-ja dvipdfmx thesis.dvi
 ```
+
+[こちら](https://github.com/TaKO8Ki/civil-engineering-thesis-template/releases/latest/download/thesis.pdf)からダウンロードできるようなPDFが生成されます。
