@@ -19,6 +19,6 @@ jobs:
       - uses: actions/checkout@v2
       - name: Build PDF file
         run: |
-          docker run -v ${{ github.workspace }}/latex/:/workdir paperist/alpine-texlive-ja platex thesis.tex
-          docker run -v ${{ github.workspace }}/latex/:/workdir paperist/alpine-texlive-ja platex thesis.tex
-          docker run -v ${{ github.workspace }}/latex/:/workdir paperist/alpine-texlive-ja dvipdfmx thesis.dvi
+          docker run -v ${{ github.workspace }}:/workdir paperist/alpine-texlive-ja platex thesis.tex
+          docker run -v ${{ github.workspace }}:/workdir paperist/alpine-texlive-ja platex thesis.tex
+          docker run -v ${{ github.workspace }}:/workdir paperist/alpine-texlive-ja dvipdfmx thesis.dvi
