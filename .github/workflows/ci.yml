@@ -1,0 +1,24 @@
+name: CI
+on:
+  push:
+    branches:
+      - main
+    paths-ignore:
+      - 'LICENSE'
+      - '**.md'
+  pull_request:
+    paths-ignore:
+      - 'LICENSE'
+      - '**.md'
+
+jobs:
+  build:
+    name: Build
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Build PDF file
+        run: |
+          docker run -v ${{ github.workspace }}:/workdir paperist/alpine-texlive-ja platex thesis.tex
+          docker run -v ${{ github.workspace }}:/workdir paperist/alpine-texlive-ja platex thesis.tex
+          docker run -v ${{ github.workspace }}:/workdir paperist/alpine-texlive-ja dvipdfmx thesis.dvi
